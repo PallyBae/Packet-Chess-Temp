@@ -104,6 +104,50 @@ void boardLoader(vector<ChessPiece*> &CHPV)
     boardLoaderWhite(CHPV);
 }
 
+void tileLoaderTopQuarter(vector<Tile*> &TV)
+{
+    float windowScale = 0.8f;
+    int windowWidth = VideoMode::getDesktopMode().width*windowScale;
+    int windowHeight = VideoMode::getDesktopMode().height*windowScale;
+    int distBoardMidToTopLeft = 372;
+    int tileSideLength = 92;
+
+    //First Justfies to the center of the screen which is the center of the chess board, then to the top left of the chess board, then to the necessary positions of the tiles. This is done to keep tile size and position consistant because the chess board sprite will also always be consistant and in the center of the screen.
+    Tile* t0 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*0, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (0,0)
+    Tile* t1 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (1,0)
+    Tile* t2 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (2,0)
+    Tile* t3 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (3,0)
+    Tile* t4 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (4,0)
+    Tile* t5 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (5,0)
+    Tile* t6 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (6,0)
+    Tile* t7 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*8, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (7,0)
+    Tile* t8 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*0, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (0,1)
+    Tile* t9 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (1,1)
+    Tile* t10 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (2,1)
+    Tile* t11 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (3,1)
+    Tile* t12 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (4,1)
+    Tile* t13 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (5,1)
+    Tile* t14 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (6,1)
+    Tile* t15 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*8, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (7,1)
+
+    TV.push_back(t0);
+    TV.push_back(t1);
+    TV.push_back(t2);
+    TV.push_back(t3);
+    TV.push_back(t4);
+    TV.push_back(t5);
+    TV.push_back(t6);
+    TV.push_back(t7);
+    TV.push_back(t8);
+    TV.push_back(t9);
+    TV.push_back(t10);
+    TV.push_back(t11);
+    TV.push_back(t12);
+    TV.push_back(t13);
+    TV.push_back(t14);
+    TV.push_back(t15);
+}
+
 void boardDestroyer(vector<ChessPiece*> &CHPV)
 {
     for(int i = 0; i < CHPV.size(); i++)
@@ -172,21 +216,6 @@ int main(){
     BlackRookSprite.setTexture(BlackRookTexture);
     WhitePawnSprite.setTexture(WhitePawnTexture);
     BlackPawnSprite.setTexture(BlackPawnTexture);
-    
-    /*
-    WhiteKingSprite.setOrigin((WhiteKingSprite.getLocalBounds().width)/2, ((WhiteKingSprite.getLocalBounds().height)/2) - 20);
-    BlackKingSprite.setOrigin((BlackKingSprite.getLocalBounds().width)/2, ((BlackKingSprite.getLocalBounds().height)/2) - 20);
-    WhiteQueenSprite.setOrigin((WhiteQueenSprite.getLocalBounds().width)/2, ((WhiteQueenSprite.getLocalBounds().height)/2) - 20);
-    BlackQueenSprite.setOrigin((BlackQueenSprite.getLocalBounds().width)/2, ((BlackQueenSprite.getLocalBounds().height)/2) - 20);
-    WhiteBishopSprite.setOrigin((WhiteBishopSprite.getLocalBounds().width)/2, ((WhiteBishopSprite.getLocalBounds().height)/2) - 20);
-    BlackBishopSprite.setOrigin((BlackBishopSprite.getLocalBounds().width)/2, ((BlackBishopSprite.getLocalBounds().height)/2) - 20);
-    WhiteKnightSprite.setOrigin((WhiteKnightSprite.getLocalBounds().width)/2, ((WhiteKnightSprite.getLocalBounds().height)/2) - 20);
-    BlackKnightSprite.setOrigin((BlackKnightSprite.getLocalBounds().width)/2, ((BlackKnightSprite.getLocalBounds().height)/2) - 20);
-    WhiteRookSprite.setOrigin((WhiteRookSprite.getLocalBounds().width)/2, ((WhiteRookSprite.getLocalBounds().height)/2) - 20);
-    BlackRookSprite.setOrigin((BlackRookSprite.getLocalBounds().width)/2, ((BlackRookSprite.getLocalBounds().height)/2) - 20);
-    WhitePawnSprite.setOrigin((WhitePawnSprite.getLocalBounds().width)/2, ((WhitePawnSprite.getLocalBounds().height)/2) - 20);
-    BlackPawnSprite.setOrigin((BlackPawnSprite.getLocalBounds().width)/2, ((BlackPawnSprite.getLocalBounds().height)/2) - 20);
-    */
 
     const int chessPieceScale = 2;
 
@@ -266,10 +295,11 @@ int main(){
             // GAME INITIALIZATION
             BoardState BoardZero;
             boardLoader(BoardZero.Board);
-            cout << BoardZero.Board.size();
             Vector2i mousePosition;
             bool mouseButtonHolding = false;
             int chessPieceLocation = -1;
+            vector <Tile*> boardtiles;
+            tileLoaderTopQuarter(boardtiles);
 
             // Sound
             Music music;
