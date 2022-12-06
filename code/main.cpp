@@ -81,14 +81,6 @@ void boardLoaderWhite(vector<ChessPiece*> &CHPV )
     Pawn* PawnWhiteSix = new Pawn(Vector2f(6,6), 0, WhitePawnSprite);
     Pawn* PawnWhiteSeven = new Pawn(Vector2f(7,6), 0, WhitePawnSprite);
     // Add To Vector
-    CHPV.push_back(RookWhiteLeft);
-    CHPV.push_back(KnightWhiteLeft);
-    CHPV.push_back(BishopWhiteLeft);
-    CHPV.push_back(QueenWhite);
-    CHPV.push_back(KingWhite);
-    CHPV.push_back(BishopWhiteRight);
-    CHPV.push_back(KnightWhiteRight);
-    CHPV.push_back(RookWhiteRight);
     CHPV.push_back(PawnWhiteZero);
     CHPV.push_back(PawnWhiteOne);
     CHPV.push_back(PawnWhiteTwo);
@@ -97,6 +89,14 @@ void boardLoaderWhite(vector<ChessPiece*> &CHPV )
     CHPV.push_back(PawnWhiteFive);
     CHPV.push_back(PawnWhiteSix);
     CHPV.push_back(PawnWhiteSeven);
+    CHPV.push_back(RookWhiteLeft);
+    CHPV.push_back(KnightWhiteLeft);
+    CHPV.push_back(BishopWhiteLeft);
+    CHPV.push_back(QueenWhite);
+    CHPV.push_back(KingWhite);
+    CHPV.push_back(BishopWhiteRight);
+    CHPV.push_back(KnightWhiteRight);
+    CHPV.push_back(RookWhiteRight);
 }
 
 void boardLoader(vector<ChessPiece*> &CHPV)
@@ -319,6 +319,19 @@ int closestTileCalculator(vector<Tile*> TV, vector<ChessPiece*> ChessVect, int c
     return closestTile;
 }
 
+void boardInitializer(vector<Tile*> TV, vector<ChessPiece*> ChessVect)
+{
+    //Board Position Initializer
+    for(int i = 0; i <= 15; i++)
+    {
+        ChessVect[i]->chessSprite.setPosition(TV[i]->getCenter().x, TV[i]->getCenter().y);
+    }
+    for(int i = 0; i <= 15; i++)
+    {
+        ChessVect[i+16]->chessSprite.setPosition(TV[i+48]->getCenter().x, TV[i+48]->getCenter().y);
+    }
+}
+
 int main(){
 
     // Window Management
@@ -367,7 +380,7 @@ int main(){
     WhiteRookTexture.loadFromFile("packet Chess Sprites/White_Rook.png");
     BlackRookTexture.loadFromFile("packet Chess Sprites/Black_Rook.png");
     WhitePawnTexture.loadFromFile("packet Chess Sprites/White_Pawn.png");
-    WhitePawnTexture.loadFromFile("packet Chess Sprites/Black_Pawn.png");
+    BlackPawnTexture.loadFromFile("packet Chess Sprites/Black_Pawn.png");
 
     WhiteKingSprite.setTexture(WhiteKingTexture);
     BlackKingSprite.setTexture(BlackKingTexture);
@@ -475,38 +488,7 @@ int main(){
             music.play();
 
             //Board Position Initializer
-            BoardZero.Board[0]->chessSprite.setPosition(boardTiles[0]->getCenter().x, boardTiles[0]->getCenter().y);
-            BoardZero.Board[1]->chessSprite.setPosition(boardTiles[1]->getCenter().x, boardTiles[1]->getCenter().y);
-            BoardZero.Board[2]->chessSprite.setPosition(boardTiles[2]->getCenter().x, boardTiles[2]->getCenter().y);
-            BoardZero.Board[3]->chessSprite.setPosition(boardTiles[3]->getCenter().x, boardTiles[3]->getCenter().y);
-            BoardZero.Board[4]->chessSprite.setPosition(boardTiles[4]->getCenter().x, boardTiles[4]->getCenter().y);
-            BoardZero.Board[5]->chessSprite.setPosition(boardTiles[5]->getCenter().x, boardTiles[5]->getCenter().y);
-            BoardZero.Board[6]->chessSprite.setPosition(boardTiles[6]->getCenter().x, boardTiles[6]->getCenter().y);
-            BoardZero.Board[7]->chessSprite.setPosition(boardTiles[7]->getCenter().x, boardTiles[7]->getCenter().y);
-            BoardZero.Board[8]->chessSprite.setPosition(boardTiles[8]->getCenter().x, boardTiles[8]->getCenter().y);
-            BoardZero.Board[9]->chessSprite.setPosition(boardTiles[9]->getCenter().x, boardTiles[9]->getCenter().y);
-            BoardZero.Board[10]->chessSprite.setPosition(boardTiles[10]->getCenter().x, boardTiles[10]->getCenter().y);
-            BoardZero.Board[11]->chessSprite.setPosition(boardTiles[11]->getCenter().x, boardTiles[11]->getCenter().y);
-            BoardZero.Board[12]->chessSprite.setPosition(boardTiles[12]->getCenter().x, boardTiles[12]->getCenter().y);
-            BoardZero.Board[13]->chessSprite.setPosition(boardTiles[13]->getCenter().x, boardTiles[13]->getCenter().y);
-            BoardZero.Board[14]->chessSprite.setPosition(boardTiles[14]->getCenter().x, boardTiles[14]->getCenter().y);
-            BoardZero.Board[15]->chessSprite.setPosition(boardTiles[15]->getCenter().x, boardTiles[15]->getCenter().y);
-            BoardZero.Board[16]->chessSprite.setPosition(boardTiles[48]->getCenter().x, boardTiles[48]->getCenter().y);
-            BoardZero.Board[17]->chessSprite.setPosition(boardTiles[49]->getCenter().x, boardTiles[49]->getCenter().y);
-            BoardZero.Board[18]->chessSprite.setPosition(boardTiles[50]->getCenter().x, boardTiles[50]->getCenter().y);
-            BoardZero.Board[19]->chessSprite.setPosition(boardTiles[51]->getCenter().x, boardTiles[51]->getCenter().y);
-            BoardZero.Board[20]->chessSprite.setPosition(boardTiles[52]->getCenter().x, boardTiles[52]->getCenter().y);
-            BoardZero.Board[21]->chessSprite.setPosition(boardTiles[53]->getCenter().x, boardTiles[53]->getCenter().y);
-            BoardZero.Board[22]->chessSprite.setPosition(boardTiles[54]->getCenter().x, boardTiles[54]->getCenter().y);
-            BoardZero.Board[23]->chessSprite.setPosition(boardTiles[55]->getCenter().x, boardTiles[55]->getCenter().y);
-            BoardZero.Board[24]->chessSprite.setPosition(boardTiles[56]->getCenter().x, boardTiles[56]->getCenter().y);
-            BoardZero.Board[25]->chessSprite.setPosition(boardTiles[57]->getCenter().x, boardTiles[57]->getCenter().y);
-            BoardZero.Board[26]->chessSprite.setPosition(boardTiles[58]->getCenter().x, boardTiles[58]->getCenter().y);
-            BoardZero.Board[27]->chessSprite.setPosition(boardTiles[59]->getCenter().x, boardTiles[59]->getCenter().y);
-            BoardZero.Board[28]->chessSprite.setPosition(boardTiles[60]->getCenter().x, boardTiles[60]->getCenter().y);
-            BoardZero.Board[29]->chessSprite.setPosition(boardTiles[61]->getCenter().x, boardTiles[61]->getCenter().y);
-            BoardZero.Board[30]->chessSprite.setPosition(boardTiles[62]->getCenter().x, boardTiles[62]->getCenter().y);
-            BoardZero.Board[31]->chessSprite.setPosition(boardTiles[16]->getCenter().x, boardTiles[9]->getCenter().y);
+            boardInitializer(boardTiles, BoardZero.Board);
             
             while(gameState == PLAYING && window.isOpen())
             {
@@ -628,13 +610,12 @@ int main(){
                 window.draw(ChessBoardSprite);
                 for (int i = 0; i < BoardZero.Board.size(); i++)
                 {
-                    BoardZero.Board[i]->chessSprite.setPosition(BoardZero.Board[i]->chessSprite.getPosition().x - 50, BoardZero.Board[i]->chessSprite.getPosition().y - 50);
+                    BoardZero.Board[i]->chessSprite.setPosition(BoardZero.Board[i]->chessSprite.getPosition().x - 45, BoardZero.Board[i]->chessSprite.getPosition().y - 45);
                     window.draw(BoardZero.Board[i]->chessSprite);
-                    BoardZero.Board[i]->chessSprite.setPosition(BoardZero.Board[i]->chessSprite.getPosition().x + 50, BoardZero.Board[i]->chessSprite.getPosition().y + 50);
+                    BoardZero.Board[i]->chessSprite.setPosition(BoardZero.Board[i]->chessSprite.getPosition().x + 45, BoardZero.Board[i]->chessSprite.getPosition().y + 45);
                 }
 
                 /* RECTANGLE TESTER
-                */
                 RectangleShape tempRect(Vector2f(5,5));
                 tempRect.setFillColor(Color::Blue);
                 for (int i = 0; i < 64; i++)
@@ -642,7 +623,7 @@ int main(){
                     tempRect.setPosition(Vector2f(boardTiles[i]->getCenter().x, boardTiles[i]->getCenter().y));
                     window.draw(tempRect);
                 }
-                
+                */
 
                 // Display
                 window.display();
