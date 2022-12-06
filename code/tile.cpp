@@ -4,12 +4,13 @@
 using namespace sf;
 using namespace std;
 
-Tile::Tile(Vector2f topLeft, Vector2f botRight)
+Tile::Tile(Vector2f topLeft, Vector2f botRight, Vector2f matPos)
 {
     upperLeft = topLeft;
     lowerRight = botRight;
     Vector2f tempCenter((topLeft.x + botRight.x)/2 + 350, (topLeft.y + botRight.y)/2 + 135);
     center = tempCenter;
+    matrixPos = matPos;
 }
 
 Vector2f Tile::getCenter()

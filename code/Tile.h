@@ -12,9 +12,10 @@ class Tile
     Vector2f upperLeft;
     Vector2f lowerRight;
     Vector2f center;
+    Vector2f matrixPos;
 
     public:
     Vector2f getCenter();
     vector <ChessPiece> Defenders;
-    Tile(Vector2f topLeft, Vector2f botRight);
+    Tile(Vector2f topLeft, Vector2f botRight, Vector2f matPos);
 };

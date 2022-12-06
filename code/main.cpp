@@ -114,22 +114,22 @@ void tileLoaderTopQuarter(vector<Tile*> &TV)
     int tileSideLength = 93;
 
     //First Justfies to the center of the screen which is the center of the chess board, then to the top left of the chess board, then to the necessary positions of the tiles. This is done to keep tile size and position consistant because the chess board sprite will also always be consistant and in the center of the screen.
-    Tile* t0 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*0, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (0,0)
-    Tile* t1 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (1,0)
-    Tile* t2 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (2,0)
-    Tile* t3 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (3,0)
-    Tile* t4 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (4,0)
-    Tile* t5 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (5,0)
-    Tile* t6 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (6,0)
-    Tile* t7 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*8, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (7,0)
-    Tile* t8 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*0, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (0,1)
-    Tile* t9 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (1,1)
-    Tile* t10 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (2,1)
-    Tile* t11 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (3,1)
-    Tile* t12 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (4,1)
-    Tile* t13 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (5,1)
-    Tile* t14 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (6,1)
-    Tile* t15 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*8, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (7,1)
+    Tile* t0 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*0, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1), Vector2f(0,0));// Tile (0,0)
+    Tile* t1 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1), Vector2f(1,0));// Tile (1,0)
+    Tile* t2 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1), Vector2f(2,0));// Tile (2,0)
+    Tile* t3 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1), Vector2f(3,0));// Tile (3,0)
+    Tile* t4 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1), Vector2f(4,0));// Tile (4,0)
+    Tile* t5 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1), Vector2f(5,0));// Tile (5,0)
+    Tile* t6 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1), Vector2f(6,0));// Tile (6,0)
+    Tile* t7 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*8, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1), Vector2f(7,0));// Tile (7,0)
+    Tile* t8 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*0, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3), Vector2f(0,1));// Tile (0,1)
+    Tile* t9 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3), Vector2f(1,1));// Tile (1,1)
+    Tile* t10 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3), Vector2f(1,2));// Tile (2,1)
+    Tile* t11 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3), Vector2f(1,3));// Tile (3,1)
+    Tile* t12 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3), Vector2f(1,4));// Tile (4,1)
+    Tile* t13 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3), Vector2f(1,5));// Tile (5,1)
+    Tile* t14 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3), Vector2f(1,6));// Tile (6,1)
+    Tile* t15 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*8, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3), Vector2f(1,7));// Tile (7,1)
 
     TV.push_back(t0);
     TV.push_back(t1);
@@ -166,8 +166,8 @@ int closestTileCalculator(vector<Tile*> TV, vector<ChessPiece*> ChessVect, int c
     for (int i = 1; i < TV.size(); i++)
     {
         // Finds the Square of the distance between the sprite and the center of the Tile
-        distanceSquare = (pow((ChessVect[chessPieceNum]->chessSprite.getPosition().x - TV[i]->getCenter().x), 2) + pow((ChessVect[chessPieceNum]->chessSprite.getPosition().y - TV[i]->getCenter().y), 2));
-        smallestSquare = (pow((ChessVect[chessPieceNum]->chessSprite.getPosition().x - TV[closestTile]->getCenter().x), 2) + pow((ChessVect[chessPieceNum]->chessSprite.getPosition().y - TV[closestTile]->getCenter().y), 2));
+        distanceSquare = (pow((ChessVect[chessPieceNum]->chessSprite.getPosition().x + 50 - TV[i]->getCenter().x), 2) + pow((ChessVect[chessPieceNum]->chessSprite.getPosition().y + 50 - TV[i]->getCenter().y), 2));
+        smallestSquare = (pow((ChessVect[chessPieceNum]->chessSprite.getPosition().x + 50 - TV[closestTile]->getCenter().x), 2) + pow((ChessVect[chessPieceNum]->chessSprite.getPosition().y + 50 - TV[closestTile]->getCenter().y), 2));
         if(distanceSquare < smallestSquare)
         {
             closestTile = i;
@@ -318,7 +318,7 @@ int main(){
             Vector2i mousePosition;
             bool mouseButtonHolding = false;
             bool clipTime = false;
-            int chessPieceLocation = 0;
+            int chessPieceLocation = -1;
             vector <Tile*> boardTiles;
             tileLoaderTopQuarter(boardTiles);
 
@@ -420,15 +420,18 @@ int main(){
                 }
                 else if(mouseButtonHolding == false && clipTime == true)
                 {
-                    // Clip the ChessPiece position to the nearest board tile
-                    // Find Closest Tile
-                    int nearestTile = closestTileCalculator(boardTiles, BoardZero.Board, chessPieceLocation);
-                    // Set Sprite to Tile Position
-                    BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(boardTiles[nearestTile]->getCenter().x - 50, boardTiles[nearestTile]->getCenter().y - 50);
-                    // BoardZero.Board[0]->chessSprite.setPosition()
+                    if(chessPieceLocation != -1)
+                    {
+                        // Clip the ChessPiece position to the nearest board tile
+                        // Find Closest Tile
+                        int nearestTile = closestTileCalculator(boardTiles, BoardZero.Board, chessPieceLocation);
+                        // Set Sprite to Tile Position
+                        BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(boardTiles[nearestTile]->getCenter().x - 50, boardTiles[nearestTile]->getCenter().y - 50);
+                        // BoardZero.Board[0]->chessSprite.setPosition()
+                    }
                     //cleanup
-                    chessPieceLocation = 0;
-                    clipTime = false;
+                        chessPieceLocation = -1;
+                        clipTime = false;
                 }
 
                 /*--------------------------------------*\
