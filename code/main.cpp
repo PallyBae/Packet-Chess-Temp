@@ -479,6 +479,7 @@ int main(){
             int chessPieceLocation = -1;
             vector <Tile*> boardTiles;
             tileLoader(boardTiles);
+            int deadPositionIter = 0;
 
             // Sound
             Music music;
@@ -518,6 +519,20 @@ int main(){
                             if(event.mouseButton.button == Mouse::Left)
                             {
                                 mouseButtonHolding = true;
+                            }
+                            else if(event.mouseButton.button == Mouse::Right)
+                            {
+                                for(int i = 0; i < BoardZero.Board.size(); i++)
+                                {
+                                    if(Mouse::getPosition().x >= (BoardZero.Board[i]->chessSprite.getPosition().x - 25) && Mouse::getPosition().x < (BoardZero.Board[i]->chessSprite.getPosition().x -25 + BoardZero.Board[i]->chessSprite.getLocalBounds().width))
+                                    {
+                                        if(Mouse::getPosition().y >= ((BoardZero.Board[i]->chessSprite.getPosition().y + 10)) && Mouse::getPosition().y < ((BoardZero.Board[i]->chessSprite.getPosition().y + 50 + BoardZero.Board[i]->chessSprite.getLocalBounds().height)))
+                                        {
+                                            BoardZero.Board[i]->chessSprite.setPosition(50, 50 + deadPositionIter);
+                                            deadPositionIter += 50;
+                                        }
+                                    }
+                                }
                             }
                             
                             for(int i = 0; i < BoardZero.Board.size(); i++)
