@@ -108,8 +108,8 @@ void boardLoader(vector<ChessPiece*> &CHPV)
 void tileLoaderTopQuarter(vector<Tile*> &TV)
 {
     float windowScale = 0.8f;
-    int windowWidth = VideoMode::getDesktopMode().width*windowScale;
-    int windowHeight = VideoMode::getDesktopMode().height*windowScale;
+    int windowWidth = 1920;
+    int windowHeight = 1080;
     int distBoardMidToTopLeft = 376;
     int tileSideLength = 93;
 
@@ -152,8 +152,8 @@ void tileLoaderTopQuarter(vector<Tile*> &TV)
 void tileLoaderSecondQuarter(vector<Tile*> &TV)
 {
     float windowScale = 0.8f;
-    int windowWidth = VideoMode::getDesktopMode().width*windowScale;
-    int windowHeight = VideoMode::getDesktopMode().height*windowScale;
+    int windowWidth = 1920;
+    int windowHeight = 1080;
     int distBoardMidToTopLeft = 376;
     int tileSideLength = 93;
 
@@ -196,8 +196,8 @@ void tileLoaderSecondQuarter(vector<Tile*> &TV)
 void tileLoaderThirdQuarter(vector<Tile*> &TV)
 {
     float windowScale = 0.8f;
-    int windowWidth = VideoMode::getDesktopMode().width*windowScale;
-    int windowHeight = VideoMode::getDesktopMode().height*windowScale;
+    int windowWidth = 1920;
+    int windowHeight = 1080;
     int distBoardMidToTopLeft = 376;
     int tileSideLength = 93;
 
@@ -240,8 +240,8 @@ void tileLoaderThirdQuarter(vector<Tile*> &TV)
 void tileLoaderFinalQuarter(vector<Tile*> &TV)
 {
     float windowScale = 0.8f;
-    int windowWidth = VideoMode::getDesktopMode().width*windowScale;
-    int windowHeight = VideoMode::getDesktopMode().height*windowScale;
+    int windowWidth = 1920;
+    int windowHeight = 1080;
     int distBoardMidToTopLeft = 376;
     int tileSideLength = 93;
 
@@ -308,8 +308,8 @@ int closestTileCalculator(vector<Tile*> TV, vector<ChessPiece*> ChessVect, int c
     for (int i = 1; i < TV.size(); i++)
     {
         // Finds the Square of the distance between the sprite and the center of the Tile
-        distanceSquare = (pow((ChessVect[chessPieceNum]->chessSprite.getPosition().x + 50 - TV[i]->getCenter().x), 2) + pow((ChessVect[chessPieceNum]->chessSprite.getPosition().y + 50 - TV[i]->getCenter().y), 2));
-        smallestSquare = (pow((ChessVect[chessPieceNum]->chessSprite.getPosition().x + 50 - TV[closestTile]->getCenter().x), 2) + pow((ChessVect[chessPieceNum]->chessSprite.getPosition().y + 50 - TV[closestTile]->getCenter().y), 2));
+        distanceSquare = (pow((ChessVect[chessPieceNum]->chessSprite.getPosition().x - TV[i]->getCenter().x), 2) + pow((ChessVect[chessPieceNum]->chessSprite.getPosition().y - TV[i]->getCenter().y), 2));
+        smallestSquare = (pow((ChessVect[chessPieceNum]->chessSprite.getPosition().x - TV[closestTile]->getCenter().x), 2) + pow((ChessVect[chessPieceNum]->chessSprite.getPosition().y - TV[closestTile]->getCenter().y), 2));
         if(distanceSquare < smallestSquare)
         {
             closestTile = i;
@@ -323,10 +323,13 @@ int main(){
 
     // Window Management
     float windowScale = 1.0f;
-    int currentWindowWidth = VideoMode::getDesktopMode().width*windowScale;
-    int currentWindowHeight = VideoMode::getDesktopMode().height*windowScale;
-    VideoMode desktop(currentWindowWidth, currentWindowHeight);
-    float aspect_ratio = currentWindowHeight / static_cast<float>(currentWindowWidth);
+    //int currentWindowWidth = VideoMode::getDesktopMode().width*windowScale;
+    //int currentWindowHeight = VideoMode::getDesktopMode().height*windowScale;
+    //VideoMode desktop(currentWindowWidth, currentWindowHeight);
+    //float aspect_ratio = currentWindowHeight / static_cast<float>(currentWindowWidth);
+    VideoMode desktop(1920,1080);
+    int currentWindowWidth = 1920;
+    int currentWindowHeight = 1080;
     RenderWindow window(desktop, "Packet Chess", Style::Default);
 
     // Text Management
@@ -472,38 +475,38 @@ int main(){
             music.play();
 
             //Board Position Initializer
-            BoardZero.Board[0]->chessSprite.setPosition(boardTiles[0]->getCenter().x - 50, boardTiles[0]->getCenter().y - 50);
-            BoardZero.Board[1]->chessSprite.setPosition(boardTiles[1]->getCenter().x - 50, boardTiles[1]->getCenter().y - 50);
-            BoardZero.Board[2]->chessSprite.setPosition(boardTiles[2]->getCenter().x - 50, boardTiles[2]->getCenter().y - 50);
-            BoardZero.Board[3]->chessSprite.setPosition(boardTiles[3]->getCenter().x - 50, boardTiles[3]->getCenter().y - 50);
-            BoardZero.Board[4]->chessSprite.setPosition(boardTiles[4]->getCenter().x - 50, boardTiles[4]->getCenter().y - 50);
-            BoardZero.Board[5]->chessSprite.setPosition(boardTiles[5]->getCenter().x - 50, boardTiles[5]->getCenter().y - 50);
-            BoardZero.Board[6]->chessSprite.setPosition(boardTiles[6]->getCenter().x - 50, boardTiles[6]->getCenter().y - 50);
-            BoardZero.Board[7]->chessSprite.setPosition(boardTiles[7]->getCenter().x - 50, boardTiles[7]->getCenter().y - 50);
-            BoardZero.Board[8]->chessSprite.setPosition(boardTiles[8]->getCenter().x - 50, boardTiles[8]->getCenter().y - 50);
-            BoardZero.Board[9]->chessSprite.setPosition(boardTiles[9]->getCenter().x - 50, boardTiles[9]->getCenter().y - 50);
-            BoardZero.Board[10]->chessSprite.setPosition(boardTiles[10]->getCenter().x - 50, boardTiles[10]->getCenter().y - 50);
-            BoardZero.Board[11]->chessSprite.setPosition(boardTiles[11]->getCenter().x - 50, boardTiles[11]->getCenter().y - 50);
-            BoardZero.Board[12]->chessSprite.setPosition(boardTiles[12]->getCenter().x - 50, boardTiles[12]->getCenter().y - 50);
-            BoardZero.Board[13]->chessSprite.setPosition(boardTiles[13]->getCenter().x - 50, boardTiles[13]->getCenter().y - 50);
-            BoardZero.Board[14]->chessSprite.setPosition(boardTiles[14]->getCenter().x - 50, boardTiles[14]->getCenter().y - 50);
-            BoardZero.Board[15]->chessSprite.setPosition(boardTiles[15]->getCenter().x - 50, boardTiles[15]->getCenter().y - 50);
-            BoardZero.Board[16]->chessSprite.setPosition(boardTiles[48]->getCenter().x - 50, boardTiles[48]->getCenter().y - 50);
-            BoardZero.Board[17]->chessSprite.setPosition(boardTiles[49]->getCenter().x - 50, boardTiles[49]->getCenter().y - 50);
-            BoardZero.Board[18]->chessSprite.setPosition(boardTiles[50]->getCenter().x - 50, boardTiles[50]->getCenter().y - 50);
-            BoardZero.Board[19]->chessSprite.setPosition(boardTiles[51]->getCenter().x - 50, boardTiles[51]->getCenter().y - 50);
-            BoardZero.Board[20]->chessSprite.setPosition(boardTiles[52]->getCenter().x - 50, boardTiles[52]->getCenter().y - 50);
-            BoardZero.Board[21]->chessSprite.setPosition(boardTiles[53]->getCenter().x - 50, boardTiles[53]->getCenter().y - 50);
-            BoardZero.Board[22]->chessSprite.setPosition(boardTiles[54]->getCenter().x - 50, boardTiles[54]->getCenter().y - 50);
-            BoardZero.Board[23]->chessSprite.setPosition(boardTiles[55]->getCenter().x - 50, boardTiles[55]->getCenter().y - 50);
-            BoardZero.Board[24]->chessSprite.setPosition(boardTiles[56]->getCenter().x - 50, boardTiles[56]->getCenter().y - 50);
-            BoardZero.Board[25]->chessSprite.setPosition(boardTiles[57]->getCenter().x - 50, boardTiles[57]->getCenter().y - 50);
-            BoardZero.Board[26]->chessSprite.setPosition(boardTiles[58]->getCenter().x - 50, boardTiles[58]->getCenter().y - 50);
-            BoardZero.Board[27]->chessSprite.setPosition(boardTiles[59]->getCenter().x - 50, boardTiles[59]->getCenter().y - 50);
-            BoardZero.Board[28]->chessSprite.setPosition(boardTiles[60]->getCenter().x - 50, boardTiles[60]->getCenter().y - 50);
-            BoardZero.Board[29]->chessSprite.setPosition(boardTiles[61]->getCenter().x - 50, boardTiles[61]->getCenter().y - 50);
-            BoardZero.Board[30]->chessSprite.setPosition(boardTiles[62]->getCenter().x - 50, boardTiles[62]->getCenter().y - 50);
-            BoardZero.Board[31]->chessSprite.setPosition(boardTiles[16]->getCenter().x - 50, boardTiles[9]->getCenter().y - 50);
+            BoardZero.Board[0]->chessSprite.setPosition(boardTiles[0]->getCenter().x, boardTiles[0]->getCenter().y);
+            BoardZero.Board[1]->chessSprite.setPosition(boardTiles[1]->getCenter().x, boardTiles[1]->getCenter().y);
+            BoardZero.Board[2]->chessSprite.setPosition(boardTiles[2]->getCenter().x, boardTiles[2]->getCenter().y);
+            BoardZero.Board[3]->chessSprite.setPosition(boardTiles[3]->getCenter().x, boardTiles[3]->getCenter().y);
+            BoardZero.Board[4]->chessSprite.setPosition(boardTiles[4]->getCenter().x, boardTiles[4]->getCenter().y);
+            BoardZero.Board[5]->chessSprite.setPosition(boardTiles[5]->getCenter().x, boardTiles[5]->getCenter().y);
+            BoardZero.Board[6]->chessSprite.setPosition(boardTiles[6]->getCenter().x, boardTiles[6]->getCenter().y);
+            BoardZero.Board[7]->chessSprite.setPosition(boardTiles[7]->getCenter().x, boardTiles[7]->getCenter().y);
+            BoardZero.Board[8]->chessSprite.setPosition(boardTiles[8]->getCenter().x, boardTiles[8]->getCenter().y);
+            BoardZero.Board[9]->chessSprite.setPosition(boardTiles[9]->getCenter().x, boardTiles[9]->getCenter().y);
+            BoardZero.Board[10]->chessSprite.setPosition(boardTiles[10]->getCenter().x, boardTiles[10]->getCenter().y);
+            BoardZero.Board[11]->chessSprite.setPosition(boardTiles[11]->getCenter().x, boardTiles[11]->getCenter().y);
+            BoardZero.Board[12]->chessSprite.setPosition(boardTiles[12]->getCenter().x, boardTiles[12]->getCenter().y);
+            BoardZero.Board[13]->chessSprite.setPosition(boardTiles[13]->getCenter().x, boardTiles[13]->getCenter().y);
+            BoardZero.Board[14]->chessSprite.setPosition(boardTiles[14]->getCenter().x, boardTiles[14]->getCenter().y);
+            BoardZero.Board[15]->chessSprite.setPosition(boardTiles[15]->getCenter().x, boardTiles[15]->getCenter().y);
+            BoardZero.Board[16]->chessSprite.setPosition(boardTiles[48]->getCenter().x, boardTiles[48]->getCenter().y);
+            BoardZero.Board[17]->chessSprite.setPosition(boardTiles[49]->getCenter().x, boardTiles[49]->getCenter().y);
+            BoardZero.Board[18]->chessSprite.setPosition(boardTiles[50]->getCenter().x, boardTiles[50]->getCenter().y);
+            BoardZero.Board[19]->chessSprite.setPosition(boardTiles[51]->getCenter().x, boardTiles[51]->getCenter().y);
+            BoardZero.Board[20]->chessSprite.setPosition(boardTiles[52]->getCenter().x, boardTiles[52]->getCenter().y);
+            BoardZero.Board[21]->chessSprite.setPosition(boardTiles[53]->getCenter().x, boardTiles[53]->getCenter().y);
+            BoardZero.Board[22]->chessSprite.setPosition(boardTiles[54]->getCenter().x, boardTiles[54]->getCenter().y);
+            BoardZero.Board[23]->chessSprite.setPosition(boardTiles[55]->getCenter().x, boardTiles[55]->getCenter().y);
+            BoardZero.Board[24]->chessSprite.setPosition(boardTiles[56]->getCenter().x, boardTiles[56]->getCenter().y);
+            BoardZero.Board[25]->chessSprite.setPosition(boardTiles[57]->getCenter().x, boardTiles[57]->getCenter().y);
+            BoardZero.Board[26]->chessSprite.setPosition(boardTiles[58]->getCenter().x, boardTiles[58]->getCenter().y);
+            BoardZero.Board[27]->chessSprite.setPosition(boardTiles[59]->getCenter().x, boardTiles[59]->getCenter().y);
+            BoardZero.Board[28]->chessSprite.setPosition(boardTiles[60]->getCenter().x, boardTiles[60]->getCenter().y);
+            BoardZero.Board[29]->chessSprite.setPosition(boardTiles[61]->getCenter().x, boardTiles[61]->getCenter().y);
+            BoardZero.Board[30]->chessSprite.setPosition(boardTiles[62]->getCenter().x, boardTiles[62]->getCenter().y);
+            BoardZero.Board[31]->chessSprite.setPosition(boardTiles[16]->getCenter().x, boardTiles[9]->getCenter().y);
             
             while(gameState == PLAYING && window.isOpen())
             {
@@ -537,9 +540,9 @@ int main(){
                             
                             for(int i = 0; i < BoardZero.Board.size(); i++)
                             {
-                                if(Mouse::getPosition().x >= (BoardZero.Board[i]->chessSprite.getPosition().x + 25) && Mouse::getPosition().x < (BoardZero.Board[i]->chessSprite.getPosition().x + BoardZero.Board[i]->chessSprite.getLocalBounds().width + 25))
+                                if(Mouse::getPosition().x >= (BoardZero.Board[i]->chessSprite.getPosition().x - 25) && Mouse::getPosition().x < (BoardZero.Board[i]->chessSprite.getPosition().x -25 + BoardZero.Board[i]->chessSprite.getLocalBounds().width))
                                 {
-                                    if(Mouse::getPosition().y >= ((BoardZero.Board[i]->chessSprite.getPosition().y) + 90) && Mouse::getPosition().y < ((BoardZero.Board[i]->chessSprite.getPosition().y + BoardZero.Board[i]->chessSprite.getLocalBounds().height) + 90))
+                                    if(Mouse::getPosition().y >= ((BoardZero.Board[i]->chessSprite.getPosition().y + 10)) && Mouse::getPosition().y < ((BoardZero.Board[i]->chessSprite.getPosition().y + 50 + BoardZero.Board[i]->chessSprite.getLocalBounds().height)))
                                     {
                                         chessPieceLocation = i;
                                     }
@@ -587,8 +590,8 @@ int main(){
                 //!!!!!!!!
                 if(mouseButtonHolding == true && chessPieceLocation != -1)
                 {
-                    BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(Mouse::getPosition().x, Mouse::getPosition().y);
-                    BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(BoardZero.Board[chessPieceLocation]->chessSprite.getPosition().x - 50, BoardZero.Board[chessPieceLocation]->chessSprite.getPosition().y - 100);
+                    BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(Mouse::getPosition().x, Mouse::getPosition().y - 50);
+                    //BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(BoardZero.Board[chessPieceLocation]->chessSprite.getPosition().x, BoardZero.Board[chessPieceLocation]->chessSprite.getPosition().y);
                 }
                 else if(mouseButtonHolding == false && clipTime == true)
                 {
@@ -598,7 +601,7 @@ int main(){
                         // Find Closest Tile
                         int nearestTile = closestTileCalculator(boardTiles, BoardZero.Board, chessPieceLocation);
                         // Set Sprite to Tile Position
-                        BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(boardTiles[nearestTile]->getCenter().x - 50, boardTiles[nearestTile]->getCenter().y - 50);
+                        BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(boardTiles[nearestTile]->getCenter().x, boardTiles[nearestTile]->getCenter().y);
                         // BoardZero.Board[0]->chessSprite.setPosition()
                     }
                     //cleanup
@@ -625,18 +628,21 @@ int main(){
                 window.draw(ChessBoardSprite);
                 for (int i = 0; i < BoardZero.Board.size(); i++)
                 {
+                    BoardZero.Board[i]->chessSprite.setPosition(BoardZero.Board[i]->chessSprite.getPosition().x - 50, BoardZero.Board[i]->chessSprite.getPosition().y - 50);
                     window.draw(BoardZero.Board[i]->chessSprite);
+                    BoardZero.Board[i]->chessSprite.setPosition(BoardZero.Board[i]->chessSprite.getPosition().x + 50, BoardZero.Board[i]->chessSprite.getPosition().y + 50);
                 }
 
                 /* RECTANGLE TESTER
+                */
                 RectangleShape tempRect(Vector2f(5,5));
                 tempRect.setFillColor(Color::Blue);
-                for (int i = 0; i < 16; i++)
+                for (int i = 0; i < 64; i++)
                 {
                     tempRect.setPosition(Vector2f(boardTiles[i]->getCenter().x, boardTiles[i]->getCenter().y));
                     window.draw(tempRect);
                 }
-                */
+                
 
                 // Display
                 window.display();
