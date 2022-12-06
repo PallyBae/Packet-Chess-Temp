@@ -297,6 +297,7 @@ int main(){
             boardLoader(BoardZero.Board);
             Vector2i mousePosition;
             bool mouseButtonHolding = false;
+            bool clipTime = false;
             int chessPieceLocation = -1;
             vector <Tile*> boardtiles;
             tileLoaderTopQuarter(boardtiles);
@@ -344,7 +345,7 @@ int main(){
                             
                             for(int i = 0; i < BoardZero.Board.size()-1; i++)
                             {
-                                if(Mouse::getPosition().x >= BoardZero.Board[i]->chessSprite.getPosition().x && Mouse::getPosition().x < (BoardZero.Board[i]->chessSprite.getPosition().x + BoardZero.Board[i]->chessSprite.getLocalBounds().width))
+                                if(Mouse::getPosition().x >= (BoardZero.Board[i]->chessSprite.getPosition().x + 25) && Mouse::getPosition().x < (BoardZero.Board[i]->chessSprite.getPosition().x + BoardZero.Board[i]->chessSprite.getLocalBounds().width + 25))
                                 {
                                     if(Mouse::getPosition().y >= ((BoardZero.Board[i]->chessSprite.getPosition().y) + 90) && Mouse::getPosition().y < ((BoardZero.Board[i]->chessSprite.getPosition().y + BoardZero.Board[i]->chessSprite.getLocalBounds().height) + 90))
                                     {
@@ -361,7 +362,8 @@ int main(){
                             if(event.mouseButton.button == Mouse::Left)
                             {
                                 mouseButtonHolding = false;
-                            }
+                                clipTime = true;
+                            }                            
                         }
 
 
@@ -387,7 +389,13 @@ int main(){
                 if(mouseButtonHolding == true && chessPieceLocation != -1)
                 {
                     BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(Mouse::getPosition().x, Mouse::getPosition().y);
-                    BoardZero.Board[0]->chessSprite.setPosition(BoardZero.Board[0]->chessSprite.getPosition().x - 40, BoardZero.Board[0]->chessSprite.getPosition().y - 100);
+                    BoardZero.Board[0]->chessSprite.setPosition(BoardZero.Board[0]->chessSprite.getPosition().x - 50, BoardZero.Board[0]->chessSprite.getPosition().y - 100);
+                }
+                else if(mouseButtonHolding == false && clipTime == true)
+                {
+                    chessPieceLocation = -1;
+                    // Clip the ChessPiece position to the nearest board tile
+                    clipTime = false;
                 }
 
                 /*--------------------------------------*\
