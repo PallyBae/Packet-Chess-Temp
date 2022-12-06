@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "boardstate.h"
@@ -109,8 +110,8 @@ void tileLoaderTopQuarter(vector<Tile*> &TV)
     float windowScale = 0.8f;
     int windowWidth = VideoMode::getDesktopMode().width*windowScale;
     int windowHeight = VideoMode::getDesktopMode().height*windowScale;
-    int distBoardMidToTopLeft = 372;
-    int tileSideLength = 92;
+    int distBoardMidToTopLeft = 376;
+    int tileSideLength = 93;
 
     //First Justfies to the center of the screen which is the center of the chess board, then to the top left of the chess board, then to the necessary positions of the tiles. This is done to keep tile size and position consistant because the chess board sprite will also always be consistant and in the center of the screen.
     Tile* t0 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*0, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (0,0)
@@ -121,14 +122,14 @@ void tileLoaderTopQuarter(vector<Tile*> &TV)
     Tile* t5 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (5,0)
     Tile* t6 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (6,0)
     Tile* t7 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*8, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*1));// Tile (7,0)
-    Tile* t8 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*0, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (0,1)
-    Tile* t9 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (1,1)
-    Tile* t10 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (2,1)
-    Tile* t11 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (3,1)
-    Tile* t12 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (4,1)
-    Tile* t13 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (5,1)
-    Tile* t14 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (6,1)
-    Tile* t15 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*8, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*2));// Tile (7,1)
+    Tile* t8 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*0, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (0,1)
+    Tile* t9 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*1, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (1,1)
+    Tile* t10 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*2, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (2,1)
+    Tile* t11 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*3, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (3,1)
+    Tile* t12 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*4, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (4,1)
+    Tile* t13 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*5, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (5,1)
+    Tile* t14 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*6, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (6,1)
+    Tile* t15 = new Tile(Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*7, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*0), Vector2f(windowWidth*0.5f - distBoardMidToTopLeft + tileSideLength*8, windowHeight*0.5f - distBoardMidToTopLeft + tileSideLength*3));// Tile (7,1)
 
     TV.push_back(t0);
     TV.push_back(t1);
@@ -155,6 +156,25 @@ void boardDestroyer(vector<ChessPiece*> &CHPV)
         delete CHPV.at(i);
         CHPV.erase(CHPV.begin() + i);
     }
+}
+
+int closestTileCalculator(vector<Tile*> TV, vector<ChessPiece*> ChessVect, int chessPieceNum)
+{
+    int closestTile = 0;
+    float distanceSquare = 0;
+    float smallestSquare = 0;
+    for (int i = 1; i < TV.size(); i++)
+    {
+        // Finds the Square of the distance between the sprite and the center of the Tile
+        distanceSquare = (pow((ChessVect[chessPieceNum]->chessSprite.getPosition().x - TV[i]->getCenter().x), 2) + pow((ChessVect[chessPieceNum]->chessSprite.getPosition().y - TV[i]->getCenter().y), 2));
+        smallestSquare = (pow((ChessVect[chessPieceNum]->chessSprite.getPosition().x - TV[closestTile]->getCenter().x), 2) + pow((ChessVect[chessPieceNum]->chessSprite.getPosition().y - TV[closestTile]->getCenter().y), 2));
+        if(distanceSquare < smallestSquare)
+        {
+            closestTile = i;
+        }
+    }
+
+    return closestTile;
 }
 
 int main(){
@@ -298,9 +318,9 @@ int main(){
             Vector2i mousePosition;
             bool mouseButtonHolding = false;
             bool clipTime = false;
-            int chessPieceLocation = -1;
-            vector <Tile*> boardtiles;
-            tileLoaderTopQuarter(boardtiles);
+            int chessPieceLocation = 0;
+            vector <Tile*> boardTiles;
+            tileLoaderTopQuarter(boardTiles);
 
             // Sound
             Music music;
@@ -343,7 +363,7 @@ int main(){
                                 mouseButtonHolding = true;
                             }
                             
-                            for(int i = 0; i < BoardZero.Board.size()-1; i++)
+                            for(int i = 0; i < BoardZero.Board.size() - 1; i++)
                             {
                                 if(Mouse::getPosition().x >= (BoardZero.Board[i]->chessSprite.getPosition().x + 25) && Mouse::getPosition().x < (BoardZero.Board[i]->chessSprite.getPosition().x + BoardZero.Board[i]->chessSprite.getLocalBounds().width + 25))
                                 {
@@ -386,6 +406,13 @@ int main(){
                 ********************************************
                 \*----------------------------------------*/
                 
+                //!!!!!!!!
+                //!!!!!!!!
+                //!!!!!!!!
+                //!!!!!!!! SWAP CHESS PIECE LOCATION != -1 FOR A DISTANCE CHECKER TO SEE IF THE DISTANCE IS ABSURD
+                //!!!!!!!!
+                //!!!!!!!!
+                //!!!!!!!!
                 if(mouseButtonHolding == true && chessPieceLocation != -1)
                 {
                     BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(Mouse::getPosition().x, Mouse::getPosition().y);
@@ -393,8 +420,14 @@ int main(){
                 }
                 else if(mouseButtonHolding == false && clipTime == true)
                 {
-                    chessPieceLocation = -1;
                     // Clip the ChessPiece position to the nearest board tile
+                    // Find Closest Tile
+                    int nearestTile = closestTileCalculator(boardTiles, BoardZero.Board, chessPieceLocation);
+                    // Set Sprite to Tile Position
+                    BoardZero.Board[chessPieceLocation]->chessSprite.setPosition(boardTiles[nearestTile]->getCenter().x - 50, boardTiles[nearestTile]->getCenter().y - 50);
+                    // BoardZero.Board[0]->chessSprite.setPosition()
+                    //cleanup
+                    chessPieceLocation = 0;
                     clipTime = false;
                 }
 
@@ -416,6 +449,15 @@ int main(){
                 // Board
                 window.draw(ChessBoardSprite);
                 window.draw(BoardZero.Board[0]->chessSprite);
+
+                RectangleShape tempRect(Vector2f(5,5));
+                tempRect.setFillColor(Color::Blue);
+                for (int i = 0; i < 16; i++)
+                {
+                    tempRect.setPosition(Vector2f(boardTiles[i]->getCenter().x, boardTiles[i]->getCenter().y));
+                    window.draw(tempRect);
+                }
+                
 
                 // Display
                 window.display();

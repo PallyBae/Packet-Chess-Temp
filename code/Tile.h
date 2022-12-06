@@ -14,6 +14,7 @@ class Tile
     Vector2f center;
 
     public:
+    Vector2f getCenter();
     vector <ChessPiece> Defenders;
     Tile(Vector2f topLeft, Vector2f botRight);
 };
